@@ -17,7 +17,9 @@ $ {{shell "go-flags-demo -V"}}
 
 ### Synopsis
 
-Check out [`easygen` cli code-gen example for go-flags](https://github.com/go-easygen/easygen/issues/46) on how these Go code were ***automatically** generated*.
+All the Go code under this project were ***automatically** generated*.
+
+Check out [`easygen` cli code-gen example for go-flags](https://github.com/go-easygen/easygen/issues/46) on how to do it.
 
 
 ## Usage
