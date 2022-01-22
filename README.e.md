@@ -12,7 +12,7 @@
 `{{.Name}}` will redo global option via automatic code-gen
 
 ```sh
-$ {{shell "go-flags-demo -V || true"}}
+$ {{shell "go-flags-demo -V"}}
 ```
 
 ### Synopsis

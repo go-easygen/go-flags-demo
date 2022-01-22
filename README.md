@@ -35,7 +35,7 @@ Redo global option via automatic code-gen
 `go-flags-demo` will redo global option via automatic code-gen
 
 ```sh
-$ go-flags-demo -V || true
+$ go-flags-demo -V
 redo - global option redo
 Copyright (C) 2022, Myself <me@mine.org>
 
