@@ -12,7 +12,7 @@
 `{{.Name}}` will redo global option via automatic code-gen
 
 ```sh
-$ {{shell ".Name -V"}}
+$ {{shell "go-flags-demo -V || true"}}
 ```
 
 ### Synopsis
@@ -22,8 +22,14 @@ Check out [`easygen` cli code-gen example for go-flags](https://github.com/go-ea
 
 ## Usage
 
-### $ {{shell ".Name" | color "sh"}}
 
+```sh
+$ {{shell "go-flags-demo || true"}}
+```
+
+## Development History
+
+The following are the demos while the [`wireframed`](https://github.com/suntong/lang/tree/master/lang/Go/src/sys/go-flags/wireframed) was developed (thus having the executable name of `wireframed`):
 
 ### Demo
 
