@@ -36,8 +36,8 @@ func init() {
 func (x *InstallCommand) Execute(args []string) error {
 	fmt.Fprintf(os.Stderr, "Install the network application\n")
 	// fmt.Fprintf(os.Stderr, "Copyright (C) 2022, Myself <me@mine.org>\n\n")
-	clis.Setup(fmt.Sprintf("%s::%s", progname, "install"), Opts.Verbose)
-	clis.Verbose(1, "Doing Install, with %+v, %+v", Opts, args)
+	clis.Setup(fmt.Sprintf("%s::%s", progname, "install"), opts.Verbose)
+	clis.Verbose(1, "Doing Install, with %+v, %+v", opts, args)
 	fmt.Println(x.Dir, x.Suffix)
 	return x.Exec(args)
 }

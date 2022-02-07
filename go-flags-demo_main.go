@@ -31,20 +31,20 @@ var (
 	version  = "0.1.0"
 	date     = "2022-01-22"
 
-	// Opts store all the configurable options
-	Opts OptsT
+	// opts store all the configurable options
+	opts optsT
 )
 
-var parser = flags.NewParser(&Opts, flags.Default)
+var parser = flags.NewParser(&opts, flags.Default)
 
 ////////////////////////////////////////////////////////////////////////////
 // Function definitions
 
 // Function main
 func main() {
-	Opts.Version = showVersion
-	Opts.Verbflg = func() {
-		Opts.Verbose++
+	opts.Version = showVersion
+	opts.Verbflg = func() {
+		opts.Verbose++
 	}
 
 	if _, err := parser.Parse(); err != nil {
