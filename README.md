@@ -41,7 +41,7 @@ Copyright (C) 2022, Myself <me@mine.org>
 
 Redo global option via automatic code-gen
 
-Built on 2022-01-22
+Built on 2023-01-22
 Version 0.1.0
 ```
 

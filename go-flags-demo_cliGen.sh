@@ -8,6 +8,11 @@ cd $srcDir || srcDir=/usr/share/doc/easygen/examples
   exit 1
 }
 
+set -x
+
 cd $srcDir
 easygen commandlineGoFlags.header,commandlineGoFlags.ityped.tmpl,commandlineGoFlags "$pwd/$prj"_cli | gofmt > "$pwd/$prj"_cliDef.go
+
+cd $pwd
+go build -v
 echo ${prj}_cliDef.go generated successful

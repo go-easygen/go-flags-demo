@@ -7,14 +7,14 @@ package main
 ////////////////////////////////////////////////////////////////////////////
 // Program: redo
 // Purpose: global option redo
-// Authors: Myself <me@mine.org> (c) 2022, All rights reserved
+// Authors: Myself <me@mine.org> (c) 2022-2023, All rights reserved
 ////////////////////////////////////////////////////////////////////////////
 
 import (
 //  	"fmt"
 //  	"os"
 
-//  	"github.com/go-easygen/go-flags"
+// "github.com/go-easygen/go-flags"
 )
 
 // Template for main starts here
@@ -28,7 +28,7 @@ import (
 //  var (
 //          progname  = "redo"
 //          version   = "0.1.0"
-//          date = "2022-02-07"
+//          date = "2023-01-22"
 
 //  	// opts store all the configurable options
 //  	opts optsT
@@ -56,10 +56,10 @@ import (
 //  }
 //
 //  func showVersion() {
-//   	fmt.Fprintf(os.Stderr, "redo - global option redo\n")
-//   	fmt.Fprintf(os.Stderr, "Copyright (C) 2022, Myself <me@mine.org>\n\n")
-//  	fmt.Fprintf(os.Stderr, "Redo global option via automatic code-gen\n\nBuilt on %s\nVersion %s\n",
-//  		date, version)
+//   	fmt.Fprintf(os.Stderr, "redo - global option redo, version %s\n", version)
+//  	fmt.Fprintf(os.Stderr, "Built on %s\n", date)
+//   	fmt.Fprintf(os.Stderr, "Copyright (C) 2022-2023, Myself <me@mine.org>\n\n")
+//  	fmt.Fprintf(os.Stderr, "Redo global option via automatic code-gen\n")
 //  	os.Exit(0)
 //  }
 // Template for main ends here
@@ -87,7 +87,7 @@ type optsT struct {
 ////////////////////////////////////////////////////////////////////////////
 // Program: redo
 // Purpose: global option redo
-// Authors: Myself <me@mine.org> (c) 2022, All rights reserved
+// Authors: Myself <me@mine.org> (c) 2022-2023, All rights reserved
 ////////////////////////////////////////////////////////////////////////////
 
 //  package main
@@ -121,7 +121,7 @@ type optsT struct {
 //
 //  func (x *BuildCommand) Execute(args []string) error {
 //   	fmt.Fprintf(os.Stderr, "Build the network application\n")
-//   	// fmt.Fprintf(os.Stderr, "Copyright (C) 2022, Myself <me@mine.org>\n\n")
+//   	// fmt.Fprintf(os.Stderr, "Copyright (C) 2022-2023, Myself <me@mine.org>\n\n")
 //   	clis.Setup("redo::build", opts.Verbose)
 //   	clis.Verbose(1, "Doing Build, with %+v, %+v", opts, args)
 //   	fmt.Println(x.Dir)
@@ -142,7 +142,7 @@ type optsT struct {
 ////////////////////////////////////////////////////////////////////////////
 // Program: redo
 // Purpose: global option redo
-// Authors: Myself <me@mine.org> (c) 2022, All rights reserved
+// Authors: Myself <me@mine.org> (c) 2022-2023, All rights reserved
 ////////////////////////////////////////////////////////////////////////////
 
 //  package main
@@ -177,7 +177,7 @@ type optsT struct {
 //
 //  func (x *InstallCommand) Execute(args []string) error {
 //   	fmt.Fprintf(os.Stderr, "Install the network application\n")
-//   	// fmt.Fprintf(os.Stderr, "Copyright (C) 2022, Myself <me@mine.org>\n\n")
+//   	// fmt.Fprintf(os.Stderr, "Copyright (C) 2022-2023, Myself <me@mine.org>\n\n")
 //   	clis.Setup("redo::install", opts.Verbose)
 //   	clis.Verbose(1, "Doing Install, with %+v, %+v", opts, args)
 //   	fmt.Println(x.Dir, x.Suffix)
@@ -198,7 +198,7 @@ type optsT struct {
 ////////////////////////////////////////////////////////////////////////////
 // Program: redo
 // Purpose: global option redo
-// Authors: Myself <me@mine.org> (c) 2022, All rights reserved
+// Authors: Myself <me@mine.org> (c) 2022-2023, All rights reserved
 ////////////////////////////////////////////////////////////////////////////
 
 //  package main
@@ -241,7 +241,7 @@ type optsT struct {
 //
 //  func (x *PublishCommand) Execute(args []string) error {
 //   	fmt.Fprintf(os.Stderr, "Publish the network application\n")
-//   	// fmt.Fprintf(os.Stderr, "Copyright (C) 2022, Myself <me@mine.org>\n\n")
+//   	// fmt.Fprintf(os.Stderr, "Copyright (C) 2022-2023, Myself <me@mine.org>\n\n")
 //   	clis.Setup("redo::publish", opts.Verbose)
 //   	clis.Verbose(1, "Doing Publish, with %+v, %+v", opts, args)
 //   	fmt.Println(x.Dir, x.Suffix, x.Out, x.Args)
