@@ -1,5 +1,5 @@
 // redo - global option redo
-//
+
 // Redo global option via automatic code-gen
 
 package main
@@ -7,10 +7,10 @@ package main
 ////////////////////////////////////////////////////////////////////////////
 // Program: redo
 // Purpose: global option redo
-// Authors: Myself <me@mine.org> (c) 2022, All rights reserved
+// Authors: Myself <me@mine.org> (c) 2022-2023, All rights reserved
 ////////////////////////////////////////////////////////////////////////////
 
-//go:generate sh -v go-flags-demo_cliGen.sh
+//go:generate sh go-flags-demo_cliGen.sh
 //go:generate emd gen -in README.beg.e.md -in README.e.md -in README.end.e.md -out README.md
 
 import (
@@ -29,7 +29,7 @@ import (
 var (
 	progname = "redo"
 	version  = "0.1.0"
-	date     = "2022-01-22"
+	date     = "2023-01-22"
 
 	// opts store all the configurable options
 	opts optsT
@@ -57,9 +57,9 @@ func main() {
 }
 
 func showVersion() {
-	fmt.Fprintf(os.Stderr, "redo - global option redo\n")
-	fmt.Fprintf(os.Stderr, "Copyright (C) 2022, Myself <me@mine.org>\n\n")
-	fmt.Fprintf(os.Stderr, "Redo global option via automatic code-gen\n\nBuilt on %s\nVersion %s\n",
-		date, version)
+	fmt.Fprintf(os.Stderr, "redo - global option redo, version %s\n", version)
+	fmt.Fprintf(os.Stderr, "Built on %s\n", date)
+	fmt.Fprintf(os.Stderr, "Copyright (C) 2022-2023, Myself <me@mine.org>\n\n")
+	fmt.Fprintf(os.Stderr, "Redo global option via automatic code-gen\n")
 	os.Exit(0)
 }

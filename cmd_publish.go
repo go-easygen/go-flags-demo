@@ -1,14 +1,16 @@
 ////////////////////////////////////////////////////////////////////////////
 // Program: redo
 // Purpose: global option redo
-// Authors: Myself <me@mine.org> (c) 2022, All rights reserved
+// Authors: Myself <me@mine.org> (c) 2022-2023, All rights reserved
 ////////////////////////////////////////////////////////////////////////////
 
 package main
 
 import (
-//	"fmt"
-//	"os"
+	"fmt"
+	"os"
+
+	"github.com/go-easygen/go-flags/clis"
 )
 
 // *** Sub-command: publish ***
@@ -32,23 +34,27 @@ type PublishCommand struct {
 
 var publishCommand PublishCommand
 
-func (x *PublishCommand) Execute(args []string) error {
-	return x.Exec(args)
-}
-
-// Exec implements the business logic of command `publish`
-// func (x *PublishCommand) Exec(args []string) error {
-// 	fmt.Fprintf(os.Stderr, "Publish the network application\n")
-// 	// fmt.Fprintf(os.Stderr, "Copyright (C) 2022, Myself <me@mine.org>\n\n")
-// 	// fmt.Printf("Doing Publish, with %+v, %+v\n", opts, args)
-// 	// fmt.Println(x.Dir, x.Suffix, x.Out, x.Args)
-// 	// err := ...
-// 	return nil
-// }
-
 func init() {
 	parser.AddCommand("publish",
 		"Publish the network application",
 		"Publish the built network application to central repo",
 		&publishCommand)
 }
+
+func (x *PublishCommand) Execute(args []string) error {
+	fmt.Fprintf(os.Stderr, "Publish the network application\n")
+	// fmt.Fprintf(os.Stderr, "Copyright (C) 2022-2023, Myself <me@mine.org>\n\n")
+	clis.Setup("redo::publish", opts.Verbose)
+	clis.Verbose(1, "Doing Publish, with %+v, %+v", opts, args)
+	fmt.Println(x.Dir, x.Suffix, x.Out, x.Args)
+	return x.Exec(args)
+}
+
+// Exec implements the business logic of command `publish`
+// func (x *PublishCommand) Exec(args []string) error {
+// 	// err := ...
+// 	// clis.WarnOn("Publish, Exec", err)
+// 	// or,
+// 	// clis.AbortOn("Publish, Exec", err)
+// 	return nil
+// }

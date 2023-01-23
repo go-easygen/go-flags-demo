@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////
 // Program: redo
 // Purpose: global option redo
-// Authors: Myself <me@mine.org> (c) 2022, All rights reserved
+// Authors: Myself <me@mine.org> (c) 2022-2023, All rights reserved
 ////////////////////////////////////////////////////////////////////////////
 
 package main
@@ -9,6 +9,8 @@ package main
 import (
 	"fmt"
 	"os"
+
+	"github.com/go-easygen/go-flags/clis"
 )
 
 // *** Sub-command: build ***
@@ -23,19 +25,27 @@ type BuildCommand struct {
 
 var buildCommand BuildCommand
 
-// BuildCommand implements the business logic of command `build`
-func (x *BuildCommand) Execute(args []string) error {
-	fmt.Fprintf(os.Stderr, "Build the network application\n")
-	// fmt.Fprintf(os.Stderr, "Copyright (C) 2022, Myself <me@mine.org>\n\n")
-	// fmt.Printf("Doing Build, with %#v\n", args)
-	// fmt.Println(x.Dir)
-	// err := ...
-	return nil
-}
-
 func init() {
 	parser.AddCommand("build",
 		"Build the network application",
 		"Usage:\n  redo build [Options] Arch(i386|amd64)",
 		&buildCommand)
 }
+
+func (x *BuildCommand) Execute(args []string) error {
+	fmt.Fprintf(os.Stderr, "Build the network application\n")
+	// fmt.Fprintf(os.Stderr, "Copyright (C) 2022-2023, Myself <me@mine.org>\n\n")
+	clis.Setup("redo::build", opts.Verbose)
+	clis.Verbose(1, "Doing Build, with %+v, %+v", opts, args)
+	fmt.Println(x.Dir)
+	return x.Exec(args)
+}
+
+// Exec implements the business logic of command `build`
+// func (x *BuildCommand) Exec(args []string) error {
+// 	// err := ...
+// 	// clis.WarnOn("Build, Exec", err)
+// 	// or,
+// 	// clis.AbortOn("Build, Exec", err)
+// 	return nil
+// }

@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////
 // Program: redo
 // Purpose: global option redo
-// Authors: Myself <me@mine.org> (c) 2022, All rights reserved
+// Authors: Myself <me@mine.org> (c) 2022-2023, All rights reserved
 ////////////////////////////////////////////////////////////////////////////
 
 package main
@@ -35,8 +35,8 @@ func init() {
 
 func (x *InstallCommand) Execute(args []string) error {
 	fmt.Fprintf(os.Stderr, "Install the network application\n")
-	// fmt.Fprintf(os.Stderr, "Copyright (C) 2022, Myself <me@mine.org>\n\n")
-	clis.Setup(fmt.Sprintf("%s::%s", progname, "install"), opts.Verbose)
+	// fmt.Fprintf(os.Stderr, "Copyright (C) 2022-2023, Myself <me@mine.org>\n\n")
+	clis.Setup("redo::install", opts.Verbose)
 	clis.Verbose(1, "Doing Install, with %+v, %+v", opts, args)
 	fmt.Println(x.Dir, x.Suffix)
 	return x.Exec(args)

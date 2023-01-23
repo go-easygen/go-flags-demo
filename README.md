@@ -12,8 +12,6 @@
 
 redo - global option redo
 
-Redo global option via automatic code-gen
-
 
 ## TOC
 - [go-flags-demo - global option redo](#go-flags-demo---global-option-redo)
@@ -36,13 +34,11 @@ Redo global option via automatic code-gen
 
 ```sh
 $ go-flags-demo -V
-redo - global option redo
-Copyright (C) 2022, Myself <me@mine.org>
+redo - global option redo, version 0.1.0
+Built on 2023-01-22
+Copyright (C) 2022-2023, Myself <me@mine.org>
 
 Redo global option via automatic code-gen
-
-Built on 2023-01-22
-Version 0.1.0
 ```
 
 ### Synopsis

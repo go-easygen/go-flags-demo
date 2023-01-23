@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////
 // Program: redo
 // Purpose: global option redo
-// Authors: Myself <me@mine.org> (c) 2022, All rights reserved
+// Authors: Myself <me@mine.org> (c) 2022-2023, All rights reserved
 ////////////////////////////////////////////////////////////////////////////
 
 package main
@@ -9,15 +9,15 @@ package main
 import (
 	"fmt"
 
+	//"github.com/mkideal/cli/clis"
 	"github.com/go-easygen/go-flags/clis"
 )
 
 // *** Sub-command: install ***
 // Exec implements the business logic of command `install`
 func (x *InstallCommand) Exec(args []string) error {
-	err := fmt.Errorf("Sample warning: Instance not found")
-	clis.WarnOn("Install, Exec", err)
+	clis.WarnOn("install::Exec", fmt.Errorf("sample warning message"))
 	// or,
-	// clis.AbortOn("Doing Install", err)
+	clis.AbortOn("install::Exec", fmt.Errorf("critical error message"))
 	return nil
 }
