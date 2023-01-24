@@ -34,8 +34,11 @@ type PublishCommand struct {
 
 var publishCommand PublishCommand
 
+////////////////////////////////////////////////////////////////////////////
+// Function definitions
+
 func init() {
-	parser.AddCommand("publish",
+	gfParser.AddCommand("publish",
 		"Publish the network application",
 		"Publish the built network application to central repo",
 		&publishCommand)
@@ -46,15 +49,15 @@ func (x *PublishCommand) Execute(args []string) error {
 	// fmt.Fprintf(os.Stderr, "Copyright (C) 2022-2023, Myself <me@mine.org>\n\n")
 	clis.Setup("redo::publish", opts.Verbose)
 	clis.Verbose(1, "Doing Publish, with %+v, %+v", opts, args)
-	fmt.Println(x.Dir, x.Suffix, x.Out, x.Args)
+	// fmt.Println(x.Dir, x.Suffix, x.Out, x.Args)
 	return x.Exec(args)
 }
 
-// Exec implements the business logic of command `publish`
+// // Exec implements the business logic of command `publish`
 // func (x *PublishCommand) Exec(args []string) error {
 // 	// err := ...
-// 	// clis.WarnOn("Publish, Exec", err)
+// 	// clis.WarnOn("publish::Exec", err)
 // 	// or,
-// 	// clis.AbortOn("Publish, Exec", err)
+// 	// clis.AbortOn("publish::Exec", err)
 // 	return nil
 // }

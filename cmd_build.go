@@ -25,8 +25,11 @@ type BuildCommand struct {
 
 var buildCommand BuildCommand
 
+////////////////////////////////////////////////////////////////////////////
+// Function definitions
+
 func init() {
-	parser.AddCommand("build",
+	gfParser.AddCommand("build",
 		"Build the network application",
 		"Usage:\n  redo build [Options] Arch(i386|amd64)",
 		&buildCommand)
@@ -37,15 +40,15 @@ func (x *BuildCommand) Execute(args []string) error {
 	// fmt.Fprintf(os.Stderr, "Copyright (C) 2022-2023, Myself <me@mine.org>\n\n")
 	clis.Setup("redo::build", opts.Verbose)
 	clis.Verbose(1, "Doing Build, with %+v, %+v", opts, args)
-	fmt.Println(x.Dir)
+	// fmt.Println(x.Dir)
 	return x.Exec(args)
 }
 
-// Exec implements the business logic of command `build`
+// // Exec implements the business logic of command `build`
 // func (x *BuildCommand) Exec(args []string) error {
 // 	// err := ...
-// 	// clis.WarnOn("Build, Exec", err)
+// 	// clis.WarnOn("build::Exec", err)
 // 	// or,
-// 	// clis.AbortOn("Build, Exec", err)
+// 	// clis.AbortOn("build::Exec", err)
 // 	return nil
 // }

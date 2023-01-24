@@ -26,8 +26,11 @@ type InstallCommand struct {
 
 var installCommand InstallCommand
 
+////////////////////////////////////////////////////////////////////////////
+// Function definitions
+
 func init() {
-	parser.AddCommand("install",
+	gfParser.AddCommand("install",
 		"Install the network application",
 		"The add command adds a file to the repository. Use -a to add all files",
 		&installCommand)
@@ -38,15 +41,15 @@ func (x *InstallCommand) Execute(args []string) error {
 	// fmt.Fprintf(os.Stderr, "Copyright (C) 2022-2023, Myself <me@mine.org>\n\n")
 	clis.Setup("redo::install", opts.Verbose)
 	clis.Verbose(1, "Doing Install, with %+v, %+v", opts, args)
-	fmt.Println(x.Dir, x.Suffix)
+	// fmt.Println(x.Dir, x.Suffix)
 	return x.Exec(args)
 }
 
-// Exec implements the business logic of command `install`
+// // Exec implements the business logic of command `install`
 // func (x *InstallCommand) Exec(args []string) error {
 // 	// err := ...
-// 	// clis.WarnOn("Install, Exec", err)
+// 	// clis.WarnOn("install::Exec", err)
 // 	// or,
-// 	// clis.AbortOn("Install, Exec", err)
+// 	// clis.AbortOn("install::Exec", err)
 // 	return nil
 // }

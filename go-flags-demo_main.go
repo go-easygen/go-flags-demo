@@ -29,17 +29,18 @@ import (
 var (
 	progname = "redo"
 	version  = "0.1.0"
-	date     = "2023-01-22"
+	date     = "2023-01-23"
 
 	// opts store all the configurable options
 	opts optsT
 )
 
-var parser = flags.NewParser(&opts, flags.Default)
+var gfParser = flags.NewParser(&opts, flags.Default)
 
 ////////////////////////////////////////////////////////////////////////////
 // Function definitions
 
+// ==========================================================================
 // Function main
 func main() {
 	opts.Version = showVersion
@@ -47,14 +48,17 @@ func main() {
 		opts.Verbose++
 	}
 
-	if _, err := parser.Parse(); err != nil {
+	if _, err := gfParser.Parse(); err != nil {
 		fmt.Println()
-		parser.WriteHelp(os.Stdout)
+		gfParser.WriteHelp(os.Stdout)
 		os.Exit(1)
 	}
 	fmt.Println()
 	//DoRedo()
 }
+
+//==========================================================================
+// support functions
 
 func showVersion() {
 	fmt.Fprintf(os.Stderr, "redo - global option redo, version %s\n", version)
